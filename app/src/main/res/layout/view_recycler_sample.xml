@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:weightSum="12">
+
+  <ImageView
+      android:layout_gravity="center"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_weight="3"
+      android:src="@drawable/espresso"
+      android:id="@+id/image_recycler_view"/>
+
+    <TextView
+        android:textSize="20dp"
+        android:layout_weight="6"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Espresso"
+        android:textStyle="bold"
+        android:id="@+id/text_recycler_view"/>
+
+    <ImageView
+        android:layout_weight="3"
+        android:layout_width="@dimen/hamb_menu_dimens"
+        android:layout_height="@dimen/hamb_menu_dimens"
+      android:src="@drawable/next"
+        android:layout_gravity="center"
+      android:id="@+id/arrow_recycler_view"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
