@@ -5,22 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-
-
+import com.bumptech.glide.RequestManager
+import javax.inject.Inject
 
 
 class MyAdapter(
-    properties: Array<Coffee>
+    properties: Array<Coffee>, glide: RequestManager
 ) :
     RecyclerView.Adapter<MyViewHolder>() {
     // FOR DATA
     private var properties: Array<Coffee>
 
+    lateinit var glide: RequestManager
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val context: Context = parent.context
         val inflater = LayoutInflater.from(context)
         val view: View = inflater.inflate(R.layout.view_recycler_sample, parent, false)
-        return MyViewHolder(view)
+        return MyViewHolder(view, glide = glide)
     }
 
     override fun onBindViewHolder(
@@ -39,5 +41,6 @@ class MyAdapter(
     // CONSTRUCTOR
     init {
         this.properties = properties
+        this.glide = glide
     }
 }

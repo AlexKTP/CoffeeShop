@@ -1,41 +1,35 @@
 package com.ktp.coffeeshopkotlin
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.RequestManager
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
-    lateinit var layoutManager: RecyclerView.LayoutManager
+@Inject
+lateinit var glide: RequestManager
     lateinit var adapter: MyAdapter
-    lateinit var viewHolder: MyViewHolder
     lateinit var recyclerView: RecyclerView
-    var listAdapter = null
-
 
     private val mTypeOfCoffee = arrayOf(
-        Coffee("Espresso"),
-        Coffee("Capuccino"),
-        Coffee("Macchiato"),
-        Coffee("Mocha"),
-        Coffee("Latte")
+        Coffee("Espresso", R.drawable.espresso),
+        Coffee("Capuccino", R.drawable.capuccino),
+        Coffee("Macchiato", R.drawable.macchiato),
+        Coffee("Mocha", R.drawable.mocha),
+        Coffee("Latte", R.drawable.latte)
     )
 
-    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-        adapter = MyAdapter(mTypeOfCoffee)
+        adapter = MyAdapter(mTypeOfCoffee, glide)
         recyclerView = findViewById(R.id.main_recycler_view)
-        // 3.3 - Attach the adapter to the recyclerview to populate items
-        // 3.3 - Attach the adapter to the recyclerview to populate items
         recyclerView.setAdapter(adapter)
-        // 3.4 - Set layout manager to position the items
-        // 3.4 - Set layout manager to position the items
         this.recyclerView.setLayoutManager(LinearLayoutManager(this))
 
 
