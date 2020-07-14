@@ -12,13 +12,19 @@ So, this app is only an example how to use Android Architecture Components and D
 ## Built With
 * Views
   * [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
-  * [ButterKnife](https://jakewharton.github.io/butterknife/)
   * [Glide](https://github.com/bumptech/glide/)
+
+* Architecture Components
+  * [Navigation Component](https://developer.android.com/guide/navigation)
+
+* Dependencies Injection
+  * [Dagger2](https://dagger.dev/dev-guide/)
+
 
 
 ## Contributing
 
-* **Alex KTP** - *Business Logic and Artistic Direction*
+* **Alex KTP** 
 
 ## Versioning
 
@@ -30,21 +36,20 @@ I use [Git](https://git-scm.com/) for versioning.
 
 ## License
 
-This project is open source.
+This project is open source / portfolio app.
 
 ## Acknowledgments
 
-* Android Architecture Component
-* Live Data
-* ViewModel Data Sharing
+* Navigation Component
+* Dependencies Injection - Dagger2
 
 ## Developed By
 
 Alex KTP
 
-    Copyright 2019 Alex KTP
+    Copyright 2020 Alex KTP
 
 ## ScreenShots
 
-![ScreenShot SplashScreen](https://github.com/AlexKTP/CoffeeShop/tree/master/app/src/github/github2.png "SplashScreen")
-![ScreenShot Accueil](https://github.com/AlexKTP/CoffeeShop/tree/master/app/src/github/github1.png "Accueil")
+![ScreenShot SplashScreen](https://github.com/AlexKTP/CoffeeShop/blob/master/app/src/github/github2.png?raw=true "SplashScreen")
+![ScreenShot Accueil](https://github.com/AlexKTP/CoffeeShop/blob/master/app/src/github/github1.png?raw=true "Accueil")
