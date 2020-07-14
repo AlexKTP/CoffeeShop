@@ -1,6 +1,7 @@
-package com.ktp.coffeeshopkotlin
+package com.ktp.coffeeshopkotlin.di
 
 import android.app.Application
+import com.ktp.coffeeshopkotlin.BaseApplication
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

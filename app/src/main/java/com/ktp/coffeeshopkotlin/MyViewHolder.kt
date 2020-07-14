@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class MyViewHolder(itemView: View, glide: RequestManager) : ViewHolder(itemView) {
 
-    lateinit var glide: RequestManager
+    var glide: RequestManager = glide
 
     var coffeeText: TextView
     var coffeImage: ImageView

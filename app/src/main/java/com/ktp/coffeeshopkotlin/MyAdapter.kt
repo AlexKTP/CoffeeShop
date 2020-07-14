@@ -16,12 +16,15 @@ class MyAdapter(
     // FOR DATA
     private var properties: Array<Coffee>
 
+    var onItemClick: (Int) -> Unit = {}
+
     lateinit var glide: RequestManager
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val context: Context = parent.context
         val inflater = LayoutInflater.from(context)
         val view: View = inflater.inflate(R.layout.view_recycler_sample, parent, false)
+
         return MyViewHolder(view, glide = glide)
     }
 
@@ -30,6 +33,9 @@ class MyAdapter(
         position: Int
     ) {
         viewHolder.updateWithCoffee(properties.get(position))
+        viewHolder.itemView.setOnClickListener {
+            onItemClick(viewHolder.adapterPosition)
+        }
     }
 
     // RETURN THE TOTAL COUNT OF ITEMS IN THE LIST
@@ -42,5 +48,6 @@ class MyAdapter(
     init {
         this.properties = properties
         this.glide = glide
+
     }
 }

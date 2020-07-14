@@ -1,9 +1,10 @@
-package com.ktp.coffeeshopkotlin
+package com.ktp.coffeeshopkotlin.di
 
 import android.app.Application
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
+import com.ktp.coffeeshopkotlin.*
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
@@ -12,7 +13,17 @@ import javax.inject.Singleton
 @Module
 public abstract class AppModule{
 
+
+
     companion object{
+
+        private val mTypeOfCoffee = arrayOf(
+            Coffee("Espresso", R.drawable.espresso),
+            Coffee("Capuccino", R.drawable.capuccino),
+            Coffee("Macchiato", R.drawable.macchiato),
+            Coffee("Mocha", R.drawable.mocha),
+            Coffee("Latte", R.drawable.latte)
+        )
 
         @Singleton
         @Provides
@@ -30,12 +41,18 @@ public abstract class AppModule{
             return Glide.with(application!!)
                 .setDefaultRequestOptions(requestOptions!!)
         }
+
+
+        @Provides
+        fun provideCoffeeArray(): Array<Coffee> {
+            return mTypeOfCoffee
+        }
     }
 
        @ContributesAndroidInjector
-    abstract fun contributesMainActivity(): MainActivity
+    abstract fun contributesMainFragment(): MainFragment
 
     @ContributesAndroidInjector
-    abstract fun contributesViewHolder(): MyViewHolder
+    abstract fun contributesDetailFragment(): DetailFragment
 
 }
